@@ -1323,12 +1323,48 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 				}	
 	8.es6 ->es5
 		1.安装依赖
-		npm install -D babel-core babel-loader babel-preset-es2015
+		npm install -D babel-core babel-loader@7 babel-preset-es2015
+		ps:注意！：
+			babel-loader 7.x | babel 6.x
+			babel-loader 8.x | babel 7.x
+			否则版本不兼容无法运行服务器
 		2.配置webpack
 			 {
                				 test:/\.js$/,
                 				use:"babel-loader"
         
            			 }
+	-----2022.4.22
+		
+	9.构建react环境（webpack+es6+react）
+		1.安装react
+			npm install --save react react-dom
+			npm install --save-dev babel-preset-react
+		2.编写配置文件
+			{
+               				 test:/\.(js|jsx)$/,
+                				use:"babel-loader"
+           			 }
+			增加.babelrc文件
+	10.css和图片处理
+		1.安装css相关依赖
+			1.npm install -D css-loader style-loader
+			2.npm install -D file-loader url-loader
+		2.添加配置
+			2.1css配置
+			{
+               				 test:/\.css$/,
+                					use:[
+                    				"style-loader",
+                    				"css-loader"
+                					]
+           			 }
+			2.2图片配置
+			{
+               				 test:/\.(png|jpg|gif|jpeg|svg)$/,
+                				use: "url-loader?limit=2048" //大于2M进行压缩
+           			 }
+		
+			
 
 		
