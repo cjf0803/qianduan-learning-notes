@@ -1364,7 +1364,41 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                				 test:/\.(png|jpg|gif|jpeg|svg)$/,
                 				use: "url-loader?limit=2048" //大于2M进行压缩
            			 }
-		
+	----2022.4.23
+	11.less和Sass
+		1.安装：
+			npm install --save-dev less less-loader
+		2.添加配置
+			 {
+               				 test:/\.less$/,
+                				use:[
+                    			"style-loader",
+                   			 "css-loader",
+                    			"less-loader"
+                				]
+           			 }
+	12.插件（plugins）
+		1.打开浏览器
+			1.安装：
+			npm install -D open-browser-webpack-plugin
+			2.配置
+		2.html模板添加
+			1.安装：
+			npm install -D html-webpack-plugin
+			2.配置
+		3.内置插件（省略后缀名）
+			resolve:{
+        				extensions:['.js','.jsx']
+    			},
+	14.生产环境的搭建
+		npm install -D cross-env
+		npm install -D babel-plugin-react-transform
+		npm install -D react-transform-hmr
+	
+	
+	
+			
+			
 			
 
 		
