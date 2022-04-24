@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .title{
+            text-align: center;
+        }
+        .content{
+            width: 1300px;
+            height: 900px;
+            background-color: lightblue;
+            margin: 0 auto;
+        }
+        div>li{
+            list-style: none;
+            float: left;
+            margin: 60px 0 0 110px;
+
+        }
+        div>li>img{
+            box-shadow: 15px 15px 10px #9f9f9f;
+        }
+        div button{
+            margin: 20px 0 0 45px;
+
+        }
+        .shopCart{
+            width: 1200px;
+            min-height: 500px;
+            border: 5px solid lightblue ;
+            background-color: lightgray;
+            margin: 0 auto;
+            border-radius: 80px;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title">数码商店</h1>
+    <div class="content">
+        <li class="li"><img src="../css5/images/36.png" alt=""><br><button class="btn">添加到购物车</button></li>
+        <li class="li"><img src="../css5/images/35.png" alt=""><br><button class="btn">添加到购物车</button></li>
+        <li class="li"><img src="../css5/images/34.png" alt=""><br><button class="btn">添加到购物车</button></li>
+        <li class="li"><img src="../css5/images/36.png" alt=""><br><button class="btn">添加到购物车</button></li>
+        <li class="li"><img src="../css5/images/32.png" alt=""><br><button class="btn">添加到购物车</button></li>
+        <li class="li"><img src="../css5/images/31.png" alt=""><br><button class="btn">添加到购物车</button></li>
+        <li class="li"><img src="../css5/images/30.png" alt=""><br><button class="btn">添加到购物车</button></li>
+        <li class="li"><img src="../css5/images/30.png" alt=""><br><button class="btn">添加到购物车</button></li>
+    </div>
+    <hr>
+    <h1 align="center">购物车</h1>
+    <div class="shopCart"></div>
+    <script>
+        var shopCart= document.querySelector(".shopCart");
+        var btn=document.querySelectorAll(".btn");
+        for (var i = 0; i <btn.length; i++) {
+            btn[i].onclick=function (event) {
+                var event=event||window.event;
+                var newNode=this.parentNode.cloneNode(true);
+                console.log(newNode);
+                newNode.removeChild(newNode.lastChild);
+                shopCart.appendChild(newNode);
+
+            }
+        }
+
+
+
+
+
+    </script>
+
+</body>
+</html>

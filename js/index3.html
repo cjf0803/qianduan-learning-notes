@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*//1.准备字符串
+        var str='qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789';
+    //2.生成随机数
+        function randomNum(max,min) {
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+    //3.生成长度为4(5,6,7,8)的随机数
+
+
+    function getlength(length){
+        var newStr='';
+        for (var i=0 ;i<length;i++){
+            var num=randomNum(0,str.length-1);
+            newStr += str[num];
+        }
+        return newStr;
+    }
+    var result=getlength(8);
+    console.log(result);*/
+
+
+    var str ='I love you very much!!';
+    var arr =str.split(' ');
+    var newStr='';
+     for (var i=0 ;i<arr.length;i++){
+         /* newStr += arr[i].charAt(0).toUpperCase()+arr[i].substring(1)+' ';*/
+         arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
+     }
+    /*console.log(newStr);*/
+    //console.log(arr.toString());
+    console.log(arr.join(' '));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我房帅呆呆</title>
+</head>
+<body>
+<script>
+   /*解法一
+    var title=document.title;
+     //将title 转化为数组
+        var titleArr=title.split("");
+        console.log(titleArr);
+
+        //设置定时方法
+        var t=setInterval(function () {
+            //把第一个元素删除
+            var first=titleArr.shift();
+            //将删除的元素添加到数组后面
+            titleArr.push(first);
+            console.log(titleArr);
+            //将数组变为字符串 赋值给title
+            document.title=titleArr.join("");
+            clearInterval(t);
+        },500);*/
+
+
+        //解法二
+
+        setInterval(function () {
+            var title =document.title;
+            //获取第一个字符
+            var first=title.charAt(0);
+            //获取后面字符
+            var other =title.substring(1);
+            //拼接字符
+            var result=other+first;
+            //赋值给标题
+            document.title=result;
+            console.log(result,first,other);
+        },500);
+
+
+
+
+
+</script>
+</body>
+</html>

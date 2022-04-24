@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移动</title>
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<script>
+    //获取页面元素
+    var div1 = document.querySelector(".div1");
+
+    //设置开关判断能否移动
+    var flag = false;
+    //将要减去的变量声明为全局变量
+    var delX = 0;
+    var delY = 0;
+    //div设置鼠标按下的监听
+    div1.onmousedown = function () {
+        //获取鼠标距离div左侧边框的距离
+        delX = event.clientX - div1.offsetLeft;
+        delY = event.clientY - div1.offsetTop;
+
+
+        flag = true;
+    };
+    //div设置移动事件
+    document.onmousemove = function () {
+        if (flag) {
+            var X = event.clientX;
+            var Y = event.clientY;
+            console.log("aa", X, Y);
+            div1.style.top = X - delX + "px";
+            div1.style.left = Y - delY + "px";
+        }
+    };
+    //div设置鼠标离开事件
+    document.onmouseup = function () {
+        flag = false;
+    }
+</script>
+</body>
+</html>

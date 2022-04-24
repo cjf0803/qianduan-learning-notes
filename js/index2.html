@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span>num1: <input type="text" id="num1"></span><br>
+    <span>num2: <input type="text" id="num2"></span><br>
+    <button id="btn">运算</button><br>
+    <span>结果: <input type="text" id="num3"></span>
+    <script>
+        //1.获取界面元素
+            var num1Input=document.getElementById(num1);
+            var num2Input=document.getElementById(num2);
+             var btnInput=document.getElementById(btn);
+            var resultInput=document.getElementById(num3);
+
+        //给按钮绑定点击事件
+            btnInput.onclick=function () {
+                //获取元素的值
+                var num1=parseInt(num1Input.value);
+                var num2=parseInt(num2Input.value);
+                console.log(num1,num2);
+            }
+
+    </script>
+</body>
+</html>

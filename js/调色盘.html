@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调色盘</title>
+    <style>
+        body{
+            background-color: rgb(200,200,200);
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <span>R:</span> <button class="rsub">-</button>
+        <input type="text" class="rinput" placeholder="200"/>
+        <button class="radd">+</button>
+    </p>
+    <p>
+        <span>G:</span> <button class="gsub">-</button>
+        <input type="text" class="ginput" placeholder="200"/>
+        <button class="gadd">+</button>
+    </p>
+    <p>
+        <span>B:</span> <button class="bsub">-</button>
+        <input type="text" class="binput" placeholder="200"/>
+        <button class="badd">+</button>
+    </p>
+    <button class="go">走</button>
+
+    <script>
+        //1.获取页面元素
+            var rsBtn=document.querySelector(".rsub");
+            var rinput=document.querySelector(".rinput");
+            var radd=document.querySelector(".radd");
+
+            var gsub=document.querySelector(".gsub");
+            var ginput=document.querySelector(".ginput");
+            var gadd=document.querySelector(".gadd");
+
+            var bsub=document.querySelector(".bsub");
+            var binput=document.querySelector(".binput");
+            var badd=document.querySelector(".badd");
+
+            var go=document.querySelector(".go");
+
+        //定义信号量
+            var r=200;
+            var g=200;
+            var b=200;
+             function changeColor(){
+                 if (r<0){
+                     r=0
+                 }if (r>255) {
+                     r=255
+                 }if (g<0) {
+                     g=0
+                 } if (g>255) {
+                     g = 255
+                 } if (b<0) {
+                     b=0
+                 } if (b>255) {
+                     b = 255
+                 }
+                 rinput.value=r;
+                 ginput.value=g;
+                 binput.value=b;
+                 document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';
+             }
+        //2.添加绑定事件 7个
+        ``  /*红色绑定事件
+            */
+            rsBtn.onclick=function () {
+                //数值减一
+                    r--;
+                /*//0.数值校验
+                if (r<0){
+                    r=0;
+                }
+                //1.输入框的值要改变
+                rinput.value=r;
+                //2.背景颜色改变
+                document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';*/
+                changeColor();
+
+            };
+            radd.onclick=function () {
+                r++;
+                /* if (r>255){
+                    r=255
+                }
+                rinput.value=r;
+                document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';
+            };*/
+                changeColor();
+            };
+            /*绿色绑定事件
+            */
+            gsub.onclick=function () {
+                g--;
+               /* if (g<0){
+                    g=0
+                }
+                ginput.value=g;
+                document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';*/
+                changeColor();
+            };
+            gadd.onclick=function () {
+                g++;
+                /*if (g>255){
+                    g=255
+                }
+                ginput.value=g;
+                document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';*/
+                changeColor();
+            };
+            /*蓝色绑定事件
+            */
+            bsub.onclick=function(){
+                b--;
+               /* if (b<0){
+                    b=0
+                }
+                binput.value=b;
+                document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';*/
+                changeColor();
+            };
+            badd.onclick=function () {
+                b++;
+                /*if (b>255){
+                    b=255
+                }
+                binput.value=b;
+                document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';*/
+
+                changeColor();
+            };
+
+            go.onclick=function () {
+                //1.获取标签的值
+                r=rinput.value;
+                g=ginput.value;
+                b=binput.value;
+                /*//2.数值校验
+                if (r<0){
+                    r=0
+                }else if (r>255) {
+                    r=255
+                }else if (g<0) {
+                    g=0
+                }else if (g>255) {
+                    g = 255
+                }else if (b<0) {
+                    b=0
+                }else if (b>255) {
+                    b = 255
+                }
+                //3.将值赋值给
+                rinput.value=r;
+                ginput.value=g;
+                binput.value=b;
+                //4.改变背景颜色
+                document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';*/
+                changeColor();
+            };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+</head>
+<body>
+    <h1 align="center">图书管理系统</h1>
+    <div align="center">
+    <span>书名：<input type="text " id="bookName"></span>
+    <span>作者：<input type="text " id="bookAuthor"></span>
+    <span>价格：<input type="text " id="bookPrice"></span>
+    <span>数量：<input type="text " id="bookCount"></span>
+    </div>
+    <div align="center" style="margin-top: 10px;padding-left: 10px">
+        <button id="addBtn" >添加</button>
+        <button id="queryBtn" >查询</button>
+    </div>
+    <hr>
+    <div id="showMessage" style="text-align: center"></div>
+    <script>
+        //获取页面元素
+            var bookNameInput=document.getElementById('bookName');
+            var bookAuthorInput=document.getElementById('bookAuthor');
+            var bookPriceInput=document.getElementById('bookPrice');
+            var bookCountInput=document.getElementById('bookCount');
+            var addBtn=document.getElementById('addBtn');
+            var queryBtn=document.getElementById('queryBtn');
+            var showDiv=document.getElementById('showMessage');
+        //1.5准备二维数组 用于承载数据
+            var bookArr=[];
+        //2.给button添加点击事件
+            addBtn.onclick=function () {
+                //2.10获取元素内容
+                var bookName=bookNameInput.value;
+                var bookAuthor=bookAuthorInput.value;
+                var bookPrice=bookPriceInput.value;
+                var bookCount=bookCountInput.value;
+                //2.11对元素内容判断
+                if (bookName.trim().length==0||bookAuthor.trim().length==0||bookPrice.trim().length==0||bookCount.trim().length==0) {
+                    alert("输入数据不完整，请重新输入！");
+                }else{
+                    /*//2.13添加到二维数组内
+                    var arr=[];
+                    arr.push(bookName);
+                    arr.push(bookAuthor);
+                    arr.push(bookPrice);
+                    arr.push(bookCount);
+                    bookArr.push(arr);*/
+                    //或者定义一个对象
+                    var arr={};
+                    arr.bookName=bookName;
+                    arr.bookAuthor=bookAuthor;
+                    arr.bookPrice=bookPrice;
+                    arr.bookCount=bookCount;
+                    bookArr.push(arr);
+                    //2.14数据清空
+                    bookNameInput.value='';
+                    bookAuthorInput.value='';
+                    bookPriceInput.value='';
+                    bookCountInput.value='';
+                    console.log(bookArr);
+                    //调用查询方法
+                    query();
+                }
+
+            }
+        //2.2展示按钮
+        queryBtn.onclick=function () {
+            //2.2判断二维数组是否含有数据
+            query();
+            }
+        function query() {
+            if (bookArr.length==0){
+                alert("数据为空,请添加数据！");
+
+            } else{//2.22有数据时 填充div数据
+                var str='<table align="center" cellspacing="0" width="600px" border="1">'+
+                    '<tr><td>书名</td><td>作者</td><td>价格</td><td>数量</td></tr>';
+                //2.23注意行数不固定 随着二维数组内数据增多而增多
+                //有几个一位数组 意味着有几行数据 有几个<tr>
+                for (var i=0;i<bookArr.length;i++){
+                    str+='<tr><td>'+bookArr[i].bookName+'</td>'
+                        +'<td>'+bookArr[i].bookAuthor+'</td>'+
+                        '<td>'+bookArr[i].bookPrice+'</td>'+
+                        '<td>'+bookArr[i].bookCount+'</td></tr>';
+                }
+
+            }
+            str+='</table>';
+            showDiv.innerHTML=str;
+        }
+
+    </script>
+</body>
+</html>

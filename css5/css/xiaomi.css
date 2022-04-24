@@ -1,0 +1,358 @@
+.nav{
+    width:100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgb(51,51,51);
+}
+.wrap{
+    width: 1300px;
+    height: 50px;
+    top: -15px;
+    left: 0;
+    position: relative;
+    margin: 0 auto;
+
+}
+.left a{
+    height: 50px;
+    color: #b0b0b0;
+    line-height: 50px;
+    font-size: 13px;
+    align-items: center;
+    float: left;
+    padding-left: 15px;
+
+}
+.left a:hover{
+    color: #f4f4f4;
+}
+.right a:hover{
+    color: #f4f4f4;
+}
+.right a{
+    height: 50px;
+    color: #b0b0b0;
+    line-height: 50px;
+    font-size: 13px;
+    float: left;
+    padding-right: 15px;
+
+}
+.right ul li:first-child a{
+    margin-left: 200px;
+}
+.right ul li:last-child a{
+    background-color: rgb(66,66,66);
+}
+.right ul li:last-child a:hover{
+    color: orange;
+}
+.cart_hidden{
+    width:350px;
+    height:100px;
+    line-height: 100px;
+    border: 1px solid lightgray;
+    background-color: white;
+    position: absolute;
+    right:45px;
+    overflow: hidden;
+    top:51px;
+    box-shadow:2px 3px 10px gray;
+    transition: all .5s;
+    z-index: 10;
+    display: none;
+}
+.cart:hover .cart_hidden{
+    display: block;
+}
+.white_nav{
+    clear:both;
+    width: 100%;
+    height:144px;
+    position: absolute;
+    top:70px;
+   /* border: 1px solid black;*/
+
+}
+.logo{
+    margin-left: 45px;
+}
+.logo,.wrap_right{
+    float: left;
+}
+.wrap_right ul>li{
+    margin-top: 15px;
+    font-size: 17px;
+    padding-left: 30px;
+    float: left;
+}
+.search{
+    margin: 0 0 0 170px;
+    float: left;
+
+}
+.search>input{
+    border: 1px solid lightgray;
+    width: 170px;
+    height: 30px;
+    float: left;
+}
+.search>button{
+    border:1px solid lightgray ;
+
+}
+.wrap_right ul li>a:hover{
+    color: #ef4222;
+}
+.wrap_right ul li>a{
+    font-weight: bold;
+    color: #9f9f9f;
+}
+/*<!--轮播图和滑动门开始-->*/
+.carousel{
+    width: 1226px;
+    height:460px;
+    margin: 190px 0 0 170px;
+    background: url("../images/14.png");
+    position: relative;
+    background-size: cover;
+    -webkit-animation: carousel 5s infinite alternate;
+}
+@-webkit-keyframes carousel{
+    0%{
+        background: url("../images/14.png");
+    }
+    50%{
+        background: url("../images/15.png");
+    }
+    100%{
+        background: url("../images/16.png");
+    }
+
+}
+.hdm{
+    width:234px;
+    height:460px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    background-color: rgb(161,158,158);
+    position: relative;
+    opacity: 88%;
+    }
+.hdm li{
+    height:42px;
+    line-height: 42px;
+    text-align: left;
+    padding-left: 60px;
+
+}
+.hdm a li{
+    color: white;
+   
+}
+.hdm li:hover{
+    background-color: #ef4222;
+}
+.hdm img{
+    float: right;
+    margin:10px 25px 0 0;
+}
+.hdm .hdm_hidden{
+    width: 1000px;
+    height: 460px;
+    background-color: white;
+    position: absolute;
+    font-family: 微软雅黑;
+    top:0;
+    left:233px ;
+    box-shadow: 5px 5px 10px rgba(0,0, 0, .2);
+    display: none;
+    z-index: 10;
+}
+.hdm>a:hover>.hdm_hidden{
+    display: block;
+}
+.hdm_hidden>.hidden{
+    height: 40px;
+    line-height: 70px;
+    font-size: 20px;
+    padding-right: 120px;
+    float: left;
+}
+.prev,.next{
+    width: 41px;
+    height:69px;
+    position: absolute;
+    top:50%;
+    margin-top: -34.5px;
+    cursor: pointer;
+    opacity: 77%;
+}
+.prev{
+    left: 234px;
+    background: url("../images/18.png");
+
+}
+.next{
+    right: 0;
+    background: url("../images/19.png");
+
+}
+.prev:hover{
+    background: url("../images/20.png");
+}
+.next:hover{
+    background: url("../images/21.png");
+}
+
+/*<!--轮播图和滑动门结束-->*/
+/*<!--小米小广告位开始-->*/
+.wrap_ad{
+    width:1226px;
+    height:250px;
+    margin: 20px 10px 10px 170px;
+}
+.wrap_ad ul{
+    float: left;
+}
+.wrap1{
+    width:250px ;
+    height: 220px;
+    background-color: rgb(95,87,80);
+    color: white;
+}
+.wrap_ad>.wrap1>li{
+    float: left;
+    padding-right: 15px;
+    margin-top: 5px;
+}
+.wrap1 img{
+    float: left;
+}
+.wrap2>ul{
+    transition: all .3s;
+}
+.wrap2>ul:hover{
+    transform: translate(0,-5px);
+}
+.wrap2 img{
+    box-shadow: 15px 15px 10px #9f9f9f;
+}
+/*<!--小米手机部分开始-->*/
+.phone{
+    width: 100%;
+    height:1800px;
+    margin-top: 20px;
+    background-color: rgb(245,245,245);
+}
+.phone>.top{
+    width: 100%;
+    height:150px;
+    background: url("../images/28.png") no-repeat;
+    margin:0 0 0 240px;
+}
+.phone .middle{
+    width: 1039px;
+    height:50px ;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+.phone .middle>ul>li>a:hover{
+    color: #ef4222;
+}
+.middle>ul>li:first-child{
+    margin:12px 0 0 -40px;
+    float: left;
+}
+.middle>ul>li:last-child{
+    margin-top: 12px;
+    float: right;
+}
+.middle>ul>li:last-child img{
+    margin-bottom: 6px;
+}
+.middle>ul>li a{
+    color: #9f9f9f;
+}
+.bottom{
+    width: 69%;
+    height:700px;
+    background-color: white;
+    margin: 0 auto;
+
+}
+.bottom>ul>li{
+    width: 240px;
+    height: 310px;
+    margin: 10px 10px 10px 0;
+    box-shadow: 15px 15px 10px #9f9f9f;
+    float:left ;
+    transition: all .3s;
+    font-family: 微软雅黑;
+    position: relative;
+    overflow: hidden;
+}
+.bottom>ul>li>.hidden{
+    width: 240px;
+    height: 88px;
+    background-color: #ef4222;
+    position: absolute;
+
+    transition: all .5s;
+    top: 100%;
+    left: 0;
+}
+.bottom>ul>li:hover .hidden{
+    opacity: 88%;
+    top:222px;
+}
+.bottom>ul>li:hover{
+    transform:translate(0,-5px);
+}
+.bottom ul{
+    margin:  0 auto;
+}
+.bottom>ul>li:nth-child(1){
+    width: 240px;
+    height: 640px;
+    margin-right: 5px;
+    border: none;
+    box-shadow: none;
+    background-size: cover;
+}
+.bottom>ul>li:nth-child(1) img{
+    width: 220px;
+    height: 600px;
+
+}
+/*右侧导航栏样式开始*/
+.demo{
+    width: 100px;
+    height: 500px;
+    background-color: white;
+    position: fixed;
+    right: 0;
+    top: 150px;
+    display: flex;
+
+}
+.demo ul{
+}
+.demo ul li{
+    /*border: 1px solid lightgray;*/
+    margin: 20px 0 0 -18px
+}
+.demo ul h5{
+    font-size: 14px;
+    margin: 5px 0 0 -18px;
+    color: lightblue;
+    font-weight: bolder;
+    font-family: 微软雅黑;
+
+}
+.demo ul li:hover{
+    color: #ef4222;
+}

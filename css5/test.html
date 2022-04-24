@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+</head>
+<body>
+<div style="text-align: center">
+<form action="http://www.taobao.com" >
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：<input type="text" name="username" autofocus required placeholder="请输入姓名" autocomplete="off" ></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password" name="pwd"  required ></p>
+    <p>确认密码：<input type="password" name="enpwd"  required ></p>
+    <p>密码提示问题：<select name="sel" autocomplete="off" >
+        <option  selected>请选择一个问题</option>
+        <option value="出生时间">出生时间</option>
+        <option value="父亲名字">父亲名字</option>
+        <option value="母亲名字">母亲名字</option>
+    </select>
+    </p>
+    <p>密码提示答案：<input type="text" name="pwd1"  required ></p>
+    <p>性别：<input type="radio" value="男" name="sex" checked>男 <input type="radio" value="女" name="sex">女</p>
+    <p>年龄：<input type="number" name="age"></p>
+    <p>籍贯：<select name="sel1">
+        <option selected>请选择</option>
+        <option value="浙江省">浙江省</option>
+        <option value="江苏省">江苏省</option>
+    </select>省/直辖市<select name="sel2">
+        <option selected>请选择</option>
+        <option value="杭州市">杭州市</option>
+        <option value="宁波市">宁波市</option>
+        <option value="温州市">温州市</option>
+    </select></p>
+    <p>爱好：<input type="checkbox" value="上网">上网 <input type="checkbox" value="体育">体育 <input type="checkbox" value="学习">学习</p>
+    <p  style="vertical-align: text-top">个人介绍: <textarea name="text1" cols="30" rows="10"></textarea></p>
+    <p style="margin-left: 110px">上传头像：<input type="text"><input type="file"></p>
+    <p><input type="submit" value="提交"> <input type="reset" value="重置"></p>
+</form>
+</div>
+
+</body>
+</html>

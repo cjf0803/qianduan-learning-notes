@@ -1,0 +1,78 @@
+body{
+    background-color: rgb(244,244,244);
+}
+.phone{
+    width: 1240px;
+    margin: 0 auto;
+}
+.phone_top{
+    height: 610px;
+}
+.phone_top>div{
+    width: 615px;
+    height:610px;
+    background-color: white;
+    float: left;
+    text-align: center;
+}
+.left{
+    margin-right: 10px;
+}
+ .goods-name{
+    color: #333;
+    font-size: 46px;
+    margin-bottom: 2px;
+}
+.goods-desc{
+    color: #999;
+    font-size: 24px;
+    margin-bottom: 3px;
+}
+
+.goods-price{
+    color: #c00;
+    font-size: 22px;
+    padding-left: 14px;
+}
+
+.product-sign{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
+
+}
+.red{
+    background-color: #ff3149\0;
+    background-image: linear-gradient(120deg,#ff3149,#ff64a6);
+}
+.phone .goods-img{
+    position: absolute;
+    margin-top: 150px;
+    height: 430px;
+
+
+}
+.phone_bottom>div{
+    width: 303px;
+    height:375px;
+    background-color: white;
+    float: left;
+    margin-right: 9px;
+    margin-top: 10px;
+}
+.phone_bottom .four{
+    margin-right: 0;
+}
+.phone_bottom .eight{
+    margin-right: 0;
+}
+.phone_bottom img{
+    width: 220px;
+    height: 243px;
+    margin:60px 20px 10px 40px;
+}

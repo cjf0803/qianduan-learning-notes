@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <?php
+
+    $username=$_POST['myUname'];
+    $userpass=$_POST['myUpass'];
+    $person={name:"ok"};
+    if ($username=='cjf' && $userpass=='123'){
+        var pt=$person.prototype;
+        pt.info=1;
+    }else{
+        var pt=$person.prototype;
+        pt.info=0;
+    }
+    console.log(JSON.parse($person));
+    ?>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .div1,.div2{
+            width: 300px;
+            height: 300px;
+            border: 1px solid lightblue;
+            float: left;
+            padding: 60px;
+            margin: 20px;
+
+        }
+        .div1>div{
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="div1">
+        <div>姓名：<input type="text" id="userName" placeholder="请输入姓名"></div>
+        <div>体重：<input type="text" id="userWeight" placeholder="请输入体重(kg)"></div>
+        <div>身高：<input type="text" id="userHeight" placeholder="请输入身高(m)"></div>
+        <button id="bmi" style="margin-top: 10px">BMI</button>
+    </div>
+    <div class="div2"></div>
+</body>
+<script>
+    //1.获取界面元素
+    var userNameInput=document.getElementById('userName');
+    var userWeightInput=document.getElementById('userWeight');
+    var userHeightInput=document.getElementById('userHeight');
+    var bmiBtn=document.getElementById('bmi');
+    var div2=document.getElementById('div2');
+
+    //2.button绑定按钮点击事件
+    bmiBtn.onclick=function () {
+        //2.1进行逻辑处理
+        //获取元素的值
+        var userName=userNameInput.value;
+        var userWeight=userWeightInput.value;
+        var userHeight=userHeightInput.value;
+            console.log("被点击了")
+        //体质指数(BMI)=体重(kg)÷身高^2(m)
+        var bmi= userWeight/(userHeight*userHeight);
+        //当BMI指数为18.5-23.9 为正常
+        var result='';
+        if (bmi>18.5&& bmi<23.9) {
+            result='正常';
+        }else{
+            result='不正常';
+        }
+
+        console.log(userName,userWeight,userHeight,result);
+        //将获取的值结果赋值给div2
+        div2.innerHTML="您好！"+userName+"您的身高是："+userHeight+"m 体重是："
+            +userWeight+" kg BMI指数为：" + bmi+"BMI是："+result;
+
+    }
+
+</script>
+</html>

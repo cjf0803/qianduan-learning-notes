@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .box{
+            margin:  0 auto;
+            position: relative;
+        }
+        img{
+            margin:10px;
+            padding: 10px;
+            border: 2px solid lightblue;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px skyblue;
+        }
+        .imgDiv{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var box=document.querySelector(".box");
+        var dataStr='{"src":["36.png","35.png","34.png","33.png","32.png","31.png","36.png","35.png"]}';
+
+        var data=JSON.parse(dataStr);
+
+        for (var i = 0; i <data.src.length ; i++) {
+            var imgDiv=document.createElement("div");
+            imgDiv.className="imgDiv";
+             var img=document.createElement("img");
+             img.src="../css5/images/"+data.src[i];
+             imgDiv.appendChild(img);
+             box.appendChild(imgDiv);
+
+        }
+        window.onload=function () {
+            //1.让瀑布流居中显示
+            //1.1获取视口的宽度
+            var viewWidth=document.documentElement.clientWidth;
+            //1.2用视口的宽度/一个div的宽度 拿到数量
+            var div=document.querySelectorAll(".imgDiv");
+            var oneWidth=div[0].offsetWidth;
+            var count=Math.floor(viewWidth/oneWidth);
+            box.style.width=count * oneWidth+'px';
+            //2瀑布流成型
+            //2.1存储第一行每个元素的高度
+             var heightArr=[];
+            for (var i = 0; i < div.length; i++) {
+                if(i<count){//第一行
+                    heightArr.push(div[i].offsetHeight);
+
+                }else{//不是第一行 计算第二行每个图片的位置
+                    var minValue=Math.min.apply(null,heightArr);
+                    var minIndex= heightArr.indexOf(minValue);
+                    var x=div[minIndex].offsetLeft;
+                    var y=div[minIndex].offsetHeight;
+
+                    div[i].style.position="absolute";
+                    div[i].style.left=x+"px";
+                    div[i].style.top=y+"px";
+                    heightArr[minIndex]=minValue.offsetHeight;
+                }
+            }
+
+        }
+
+
+
+    </script>
+</body>
+</html>

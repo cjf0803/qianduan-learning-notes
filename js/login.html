@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+        <span>用户名:</span><input type="text" class="username"/><br>
+        <span>密码:</span><input type="text" class="password"/><br>
+        <button>登录</button>
+        <script src="jquery/jquery-2.1.1.min.js"></script>
+        <script>
+            $('button').click(function () {
+                $.ajax({
+                    type:'post',
+                    url:'loginTest.html',
+                    dataType:'json',
+                    data:{
+                        myUname:$('.username').val(),
+                        myUpass:$('.password').val()
+
+                    },
+                    success:function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+
+        </script>
+</body>
+</html>

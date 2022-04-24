@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动条</title>
+    <style>
+        .show{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid lightblue;
+            position: absolute;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <span>数值</span><input type="range"min="0" max="100" class="range">
+    <div class="show"></div>
+    <script>
+        //1.获取页面元素
+            var range=document.querySelector(".range");
+            var show=document.querySelector(".show");
+        //2.添加事件
+            //2.1鼠标按下事件
+                range.onmousedown=function () {
+                    //1.div显示
+                    show.style.display="block";
+                    //2.div内有range的值
+                    show.innerHTML=range.value;
+                    var x=event.clientX;
+                    show.style.left=x-15+"px";
+                }
+                
+            //2.2鼠标移动事件
+                range.onmousemove=function () {
+                    //获取鼠标x坐标
+                    var x=event.clientX;
+                    //1.范围校验
+                        if (x<43){
+                            x=43;
+                        }else if(x>172){
+                            x=172;
+                        }
+                    //2.div内有range变化的值
+                    show.innerHTML=range.value;
+                    show.style.left=x-15+"px";
+                }
+                
+            //2.3鼠标抬起事件
+                range.onmouseup=function () {
+                    //1.div消失
+                    show.style.display="none"
+                }
+
+    </script>
+</body>
+</html>

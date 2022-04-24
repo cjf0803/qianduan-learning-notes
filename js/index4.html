@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        ul li {
+            float: left;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: lightblue;
+            cursor: pointer;
+        }
+        ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        ul li:hover{
+            background-color: lightpink;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="#">百度一下</a></li>
+    <li><a href="#">新浪一下</a></li>
+    <li><a href="#">淘宝一下</a></li>
+    <li><a href="#">谷歌一下</a></li>
+</ul>
+
+
+<script>
+    //使用js设置css样式
+    //1.创建元素节点
+    var p=document.createElement("p");
+    //2.将此元素节点添加到body标签中
+    document.body.appendChild(p);
+    //3.给元素节点添加内容
+    p.innerHTML="我房帅呆呆";
+    //4.创建属性节点
+    var new_1 =document.createAttribute("align");
+    //5.给属性赋值
+    new_1.value="center";
+    var new_2 =document.createAttribute("style");
+    new_2.value="color:lightblue";
+    //6.最后将元素节点和属性节点连接
+    p.setAttributeNode(new_1);
+    p.setAttributeNode(new_2);
+
+
+
+    //使用js的dom实现导航栏
+        var arr=['百度','腾讯','京东','淘宝'];
+        //创建ul元素节点
+        var ul=document.createElement("ul");
+        //创建ul属性节点
+        var ul_style=document.createAttribute("style");
+
+        //给ul属性赋值
+          ul_style.value="list-style: none";
+        //将ul元素和属性节点连接
+        ul.setAttributeNode(ul_style);
+        for (var i=0;i<arr.length;i++){
+            //创建li元素节点
+            var li=document.createElement("li");
+            //创建a元素节点
+            var a=document.createElement("a");
+            //给a节点添加内容
+            a.innerHTML=arr[i];
+            //创建li属性节点
+            var li_style=document.createAttribute("style");
+            //创建a属性节点
+            var a_style=document.createAttribute("style");
+            //给li属性值赋值
+            li_style.value="float: left;width:100px;height: 50px;line-height: 50px;text-align:center;cursor: pointer";
+            //给a属性赋值
+            a_style.value="text-decoration: none;color: white";
+            //将li元素和属性节点连接
+            li.setAttributeNode(li_style);
+            //将a元素与属性节点连接
+            a.setAttributeNode(a_style);
+            //将a元素添加到li元素中
+            li.appendChild(a);
+            //将li元素添加到ul元素中
+           ul.appendChild(li);
+        }
+        //将ul元素添加到body元素中
+        document.body.appendChild(ul);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布</title>
+    <style type="text/css">
+        canvas{
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas" width="400px " height="400px">
+        你的浏览器版本过低！
+    </canvas>
+    <script type="text/javascript">
+        var canvas=document.getElementById("mycanvas");
+        var obj=canvas.getContext("2d");
+
+
+        //var colorobj=obj.createLinearGradient(0,0,100,0);
+        var colorobj=obj.createRadialGradient(50,50,10,50,50,50);
+        colorobj.addColorStop(0,"red");
+        colorobj.addColorStop(0.5,"blue");
+        colorobj.addColorStop(1,"green");
+        //obj.rect(0,0,100,100);
+        obj.shadowColor="rgb(11,77,66)";
+        obj.shadowOffsetX=3;
+        obj.shadowOffsetY=3;
+        obj.shadowBlur=7;
+
+        obj.fillStyle="colorobj";
+        obj.strokeStyle="green";
+        obj.fillRect(0,0,100,100);
+        obj.strokeRect(100,100,100,100);
+    </script>
+</body>
+</html>
