@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="dist/browser.min.js"></script>
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/react.js"></script>
+    <script src="dist/react-dom.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    /*
+        组件：
+            在React中，整体是一个组件化设计
+     */
+
+    var LeftNav =React.createClass({
+        render:function () {
+            var Navarr=["百度","谷歌","淘宝"]
+            return(
+                <div>
+                    <ul>
+                        {
+                            Navarr.map(function (item,index) {
+                                return(
+                                    <li key={index}><a>{ item }</a></li>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+    })
+    var RightNav =React.createClass({
+        render:function () {
+            return(
+                <div>
+                    <ul>
+                        <li><a href="#">新闻</a></li>
+                        <li><a href="#">视频</a></li>
+                        <li><a href="#">小说</a></li>
+                    </ul>
+                </div>
+            )
+        }
+    })
+    var Root =React.createClass({
+        render:function(){
+            return(
+            <div>
+                <p><LeftNav /></p>
+                <p><RightNav /></p>
+            </div>
+            )
+        }
+    })
+    ReactDOM.render(<Root />,document.getElementById("root"))
+
+</script>
+</body>
+</html>

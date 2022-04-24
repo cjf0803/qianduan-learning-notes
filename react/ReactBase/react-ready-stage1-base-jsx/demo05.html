@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="dist/browser.min.js"></script>
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/react.js"></script>
+    <script src="dist/react-dom.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    /*
+        组件：
+            在React中，整体是一个组件化设计
+     */
+
+    var Nav =React.createClass({
+        render:function () {
+            return(
+                <div>
+                    <ul>
+                        {
+                            this.props.navDate.map(function (item,index) {
+                                return(
+                                    <li key={index}><a>{ item }</a></li>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+    })
+    var Root =React.createClass({
+        render:function(){
+            var nav1=["百度","京东"]
+            var nav2=["搜狐","淘宝"]
+
+            return(
+                <div>
+                    <Nav navDate={ nav1}/>
+                    <Nav navDate={ nav2}/>
+                </div>
+            )
+        }
+    })
+    ReactDOM.render(<Root />,document.getElementById("root"))
+
+</script>
+</body>
+</html>

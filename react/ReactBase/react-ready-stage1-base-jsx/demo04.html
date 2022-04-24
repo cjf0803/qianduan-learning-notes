@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="dist/browser.min.js"></script>
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/react.js"></script>
+    <script src="dist/react-dom.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    /*
+        组件：
+            在React中，整体是一个组件化设计
+     */
+        var Demo =React.createClass({
+            render:function () {
+                return(
+                    <div>{ this.props.demo}</div>
+                )
+            }
+        })
+        var Hello=React.createClass({
+            render:function () {
+                return(
+                    <div>
+                        { this.props.title}
+                        <Demo demo="你好 demo"/>
+                    </div>
+
+                )
+            }
+        })
+        ReactDOM.render(<Hello  title="hello component"/>,document.getElementById("root"))
+
+</script>
+</body>
+</html>
