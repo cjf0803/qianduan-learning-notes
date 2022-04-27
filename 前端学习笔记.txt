@@ -1446,6 +1446,14 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 		*语法糖
 			jsx就是javascript新的语法糖（jsx->最终要编译成javascript）
 			typescript也是javascript的语法糖
+2022.4.27
+
+	为什么使用 bind(this) ?
+
+    当点击事件触发的函数里有使用 this 的时候，就需要使用 bind（this）,不然 this 是 null，如果没绑定this应该是全局window。
+
+    <div className="save" onClick={this.handleClick.bind(this)}>Save</div>
+
 
 			
 			

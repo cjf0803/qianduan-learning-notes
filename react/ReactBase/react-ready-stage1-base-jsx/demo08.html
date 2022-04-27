@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="dist/browser.min.js"></script>
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/react.js"></script>
+    <script src="dist/react-dom.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    /*
+        state:组件内部状态
+        props:组件之间数据交互
+
+     */
+
+        var Demo =React.createClass({
+
+            getInitialState:function(){
+              return{
+                  value:true
+
+              }
+            },
+            changeInfo:function(){
+                this.setState({
+                    value:!this.state.value
+                })
+            },
+            /*changeContent:function(){
+              var btn=document.getElementById("btn");
+              btn.setContext="再点一下";
+            },*/
+            render:function () {
+                var value=this.state.value;
+                var info=value? "真" :"假";
+                return(
+                    <div>
+                        <p>{ info }</p>
+                        <button id="btn" onClick={ this.changeInfo }>按钮</button>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<Demo />,document.getElementById("root"))
+</script>
+</body>
+</html>

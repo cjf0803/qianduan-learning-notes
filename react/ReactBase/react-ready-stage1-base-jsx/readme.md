@@ -15,10 +15,13 @@
                    2.组件中只能存在一个根容器
                    3.组件与组件之间可以互相嵌套
                    4.组件本身可以具有业务逻辑
-                   5.组件数据交互:props 
+                   5.组件数据交互:props (组件与组件之间联系)
                         this.props.属性名
                         数据传递
-                   6.组件加样式
+                   6.组件内部状态改变：state（组件内状态改变）
+                        1.this.state.属性名   
+                        2.this.setState({})  
+                   7.组件加样式
                         类命名 className=""
                         行内样式 style={{}} 两个花括号 因为style 接收的是一个对象
                             如：<span style={{color:'green',fontSize:'35px'}}>lalalal</span>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="dist/browser.min.js"></script>
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/react.js"></script>
+    <script src="dist/react-dom.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    /*
+        state:组件内部状态
+        props:组件之间数据交互
+
+     */
+    var Index =React.createClass({
+
+        getInitialState:function(){
+            return{
+                name:"cjf",
+                age:20
+
+            }
+        },
+
+        render:function () {
+            return(
+                <div>
+
+                </div>
+            )
+        }
+    })
+    ReactDOM.render(<User />,document.getElementById("root"))
+</script>
+</body>
+</html>
