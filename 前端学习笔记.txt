@@ -1446,7 +1446,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 		*语法糖
 			jsx就是javascript新的语法糖（jsx->最终要编译成javascript）
 			typescript也是javascript的语法糖
-2022.4.27
+----2022.4.27
 
 	为什么使用 bind(this) ?
 
@@ -1454,10 +1454,116 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 
     <div className="save" onClick={this.handleClick.bind(this)}>Save</div>
 
+----2022.4.28
+	//受控组件：受react控制的组件
+	//非受控组件操作原生dom
 
+	//定义网络请求
+      	var result=fetch("http://wthrcdn.etouch.cn/weather_mini")
+        	  .then(res => {
+           	 return res.json()
+          	})
+          	.then(data => {
+           	 console.log(data)
+          	})
+
+--2022.4.29
+	1.Mock (mock.js模拟数据)
+		1.编写json格式数据，本地请求数据
+			优点：方便，快捷
+			缺点：只能存在get请求，有些情况下无法模拟
+		2.编写本地服务器，php,node方式都可以
+			优点：可以全方位的模拟数据，与真实服务器一般无二
+			缺点：麻烦，需要自己实现服务器
+		3.直接使用现有的网络服务器
+			优点：数据真实，模拟结果等同测试结果
+			缺点：不是每个项目都一定存在现有服务器的，大部分的项目是服务器和前端			同时进行		
 			
-			
+	一句话为什么要 Mock：因为我们实际编写程序都不会是一个简单类，而是有着复杂依赖关系的类，Mock 对象让我们在不依赖具体对象的情况下完成测试。
 	
+	2.跨域处理（代理服务器）注意：只适用于开发阶段 真正上线不能用的
+		1.npm run eject
+		将当前配置抛出：让我们可以去修改配置文件
+
+
+	3.Router中文意思是路由，以前多见于后端，现如今前端也有自己的路由。
+
+	为什么要使用路由？
+
+	1：单页页面实现页面的切换
+
+	2：可以通过URL对页面进行定位
+
+	3：语义化组织资源
+
+
+---2022.5.4
+	react router v6路由写法
+		import React,{Component} from "react"
+		import {BrowserRouter,Routes,Route} from "react-router-dom";
+		import Index from "../index"
+
+export default class App extends Component{
+    render() {
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Index />} />
+                </Routes>
+            </BrowserRouter>
+        );
+    }
+}
+	
+
+**2022.5.19
+	Vue学习！
+
+	概念：Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。	
+
+	基本语法：
+		1.Mustache（双大括号）：可直接调用new Vue 对象里的data 参数
+		2.v-once：该指令后面不需要跟任何表达式（v-for后面接表达式）,该指令表示元素和组			件只渲染一次，不会随着数据的改变而改变。
+
+		3.v-html：v-html会将数据当html标签解析后输出。
+
+		4.v-text：<h2 v-text="message"></h2>等效于<h2>{{message}}</h2>，但相比			于Mustache，它不够灵活。
+
+		5.v-pre：如<h3 v-pre>{{message}}</h3>，标签显示结果就是它标签本身的内容，即			{{message}}。
+
+		6.v-cloak：解决屏幕闪动的好方法。
+
+		7.v-bind：基本属性绑定和动态绑定（对象或数组），将对应的图片或地址等数据放入			data中，使用v-bind将数据引用到对应的标签中，
+				v-bind:title 简写成  :title
+
+		v-bind语法糖（简写方式）：<img v-bind:src="imgUrl" />可写为						<img:src="imgUrl" />。
+
+		8.计算属性：其本质就是属性，包含setter和getter
+
+		9.v-on（缩写：@）：绑定事件监听器。一些处理事件的修饰符（可混合使用）：
+
+		（1）.stop阻止冒泡事件的发生
+
+		（2）.prevent阻止默认事件的发生，如不用.prevent,下面标签的submit指令会调用方法			后直接提交服务器 ，即控制台显示的数据会闪过
+
+		（3）.{keycode|keyAlias}特定键盘键触发回调
+
+		（4）.once只触发一次回调
+
+		10.v-show:判断属性。
+
+		与v-if区别：v-if在条件为false时，包含v-if指令的元素不会出现在dom中；v-show在条		件为false时，只是给元素添加一个行内样式：display:none，元素仍然在dom里面；
+
+		注意：当需要在显示与隐藏之间切换频率较高的时候，应该使用v-show（性能更高），当		次数较少时通常使用v-if。
+
+		11.v-for:循环遍历操作。语法：
+
+		（1）遍历数组：v-for="(m,index) in movies"  //m是新定义的变量名称，index是对		应数组的下标，movies是已有的数组名。Index可省略。
+
+		（2）遍历对象：<li v-for=”(value,key) in moive”>{{item}}</li>  //如果只获取一		个值，那么取得的值是value，key可以省略。
+
+		12.v-model：实现双向绑定（等同于v-on和v-bind一起使用，实现实时显示）。
+
 			
 			
 			
