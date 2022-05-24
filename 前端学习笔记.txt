@@ -1,8 +1,11 @@
 	2022.3.1
+
 *标签快捷键 ：比如 p+table   <p></p>
 *代码全体格式化：ctrl+alt+L
-*注释：单行：ctrl+/
-             多行：ctrl+shift+/
+
+###### *注释：单行：ctrl+/
+
+​             多行：ctrl+shift+/
 *<hn> 标签 表示标题(n为1-6 ，其中标题从大到小)
 *<br/>单标签换行
 *<hr/>水平线标签 ——————<hr align="center" width="300px" size="10px " color="green"/>
@@ -11,14 +14,14 @@
 *&nbsp； html语言中加空格
 *<img/> 注意:单标签，必须要有属性src:图片地址 ； alt:当图片未能正常显示时 ，提供给用户的提示信息 ；title:鼠标经过图片时加载的标题
 *<a> 标签 表示超链接： <a href=""></a> 1.必须有属性href   2.网站类型地址 必须以 http://开头  3.本地链接必须要有后缀 
-				4.target:_blank 在新窗口打开 _self:在本窗口打开
-					!!!!!!
-					或者自定义 name="**"
-					通过超链接 调用target="**"  将链接调用到指定位置
-						如：<iframe src="http://www.taobao.com"  width="1000px " height="500px" 							scrolling="auto" name="topiframe" >
-    						</iframe>
-    							<a href="http://www.sina.com.cn" target="topiframe">点击进入新浪网									</a>
-				5.锚定位 用于目录 <h3><a href="#life">个人生活</a></h3>； <h5 id="life">个人生活</h5>
+​				4.target:_blank 在新窗口打开 _self:在本窗口打开
+​					!!!!!!
+​					或者自定义 name="**"
+​					通过超链接 调用target="**"  将链接调用到指定位置
+​						如：<iframe src="http://www.taobao.com"  width="1000px " height="500px" 							scrolling="auto" name="topiframe" >
+​    						</iframe>
+​    							<a href="http://www.sina.com.cn" target="topiframe">点击进入新浪网									</a>
+​				5.锚定位 用于目录 <h3><a href="#life">个人生活</a></h3>； <h5 id="life">个人生活</h5>
 
 *<ul>:无序列表 注意：1.与其组合的是<li> 其他标签不予组合
 		2.<li>是一个可容纳其他元素的标签
@@ -83,7 +86,7 @@
 
 
 2022.3.3	
- 
+
 *6种常用选择器：1.全局选择器*：使用范围最广 优先级最低
 	     2.元素选择器 ：一般用于自定义标签上
 	     3.类选择器:   .className{ }	如.box{color:red;}
@@ -96,7 +99,7 @@
 	       	优先级：ID选择器>类选择器>元素/标签 选择器>全局选择器
 	       5.后代选择器：如 ul li{ color :red;}  表示ul 的后代 li 标签 都采用这个样式
 	       6.子代选择器  ul>li{ color:red;} 只表示ul的下一个子代 采用这个样式	
-	
+
 *伪类选择器：赋予一些些动画效果
 	如1.a:link{} 未访问的链接
 	     2.a:visited{} 已访问过的链接
@@ -108,7 +111,7 @@
 *内边距padding ：表示内容与盒子间距离 简写顺序 （上右下左） 顺时针顺序
 
 *外边距margin ：表示盒子与最外侧距离  简写顺序 （上右下左） 顺时针顺序
- 
+
 2022.3.6
 *弹性盒子
 	父容器属性
@@ -215,7 +218,7 @@ html结构：
 }
 
 2022.3.9 
- 
+
 *设置透明度
 	opacity:77%
 
@@ -226,10 +229,10 @@ html结构：
 	2.在标签中设置伪类选择器：(hover ) transform:translate(0,-5px);
 	
 	.wrap2>ul{
-    		transition: all .3s;
+			transition: all .3s;
 	}
 	.wrap2>ul:hover{
-   		 transform: translate(0,-5px);
+		 transform: translate(0,-5px);
 	}
 
 
@@ -273,7 +276,7 @@ html结构：
         var userName=userNameInput.value;
         var userWeight=userWeightInput.value;
         var userHeight=userHeightInput.value;
-
+    
         //体质指数(BMI)=体重(kg)÷身高^2(m)
         var bmi= userWeight/(userHeight*userHeight);
         //当BMI指数为18.5-23.9 为正常
@@ -283,12 +286,12 @@ html结构：
         }else{
             result='不正常';
         }
-
+    
         console.log(userName,userWeight,userHeight,result);
         //将获取的值结果赋值给div2
         div2.innerHTML="您好！"+userName+"您的身高是："+userHeight+"m 体重是："
             +userWeight+" kg BMI指数为：" + bmi+"BMI是："+result;
-
+    
     }
 
 </script>
@@ -352,7 +355,7 @@ dom的一些属性：
 		描述：返回html文档
 		       注意：1.一般情况下 该属性是文档的第二个直接子节点	
 			document.documentElement
-
+	
 	3.body/head
 		描述：获取body/head
 		语法 document.body/document.head
@@ -367,7 +370,7 @@ dom的一些属性：
 		描述：获取当前文档的地址
 		语法：document.documentURL
 		注意：html文档独有
-
+	
 	6.document.domain
 		描述：获取当前文档的域名
 		语法：document.domain
@@ -382,12 +385,13 @@ dom的一些属性：
 			2.document.location.reload("")	重新加载资源
 						1.true:优先从服务器加载数据
 						2.false:优先从本地保存重新加载数据
-		
+
 * form 表单提交数据时 一定要写name 属性；
-form表单必须使用get方法 才能search到 地址栏的属性值
+	form表单必须使用get方法 才能search到 地址栏的属性值
 					
 
 	
+
 *//当文档加载完毕后终止定时器
 	var t =setInterval(function()){
 		console.log(document.readyState);
@@ -438,7 +442,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
     //6.最后将元素节点和属性节点连接
     p.setAttributeNode(new_1);
     p.setAttributeNode(new_2);
- 
+
 
 
 
@@ -461,7 +465,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 					
 				</script>
 			</body>
-
+	
 	2.dom0事件
 		<body>
 				<p class="p2">111</p>
@@ -480,7 +484,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 					var p3 =document.querySelector(".p3");
 					p3.addEventListener("click",function(){
 						console.log("test2");
-
+	
 					},true);
 					
 				</script>
@@ -506,12 +510,13 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 
 			}else{
 				ele['on'+type]=null;
-
+	
 			}
 
-		
-	
-		}
+
+​		
+​	
+​		}
 
 2022.3.24
 
@@ -525,19 +530,19 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 
 			}else{
 				ele['on'+type]=null;
-
+	
 			}
-
+	
 			},//属性分隔 用，连接
 		            ‘removeEvent':function(ele,type,methodName){
 			if(ele.removeEventListener){//判断如果在非ie浏览器下 是否为正性分支
 				ele.removeEventListener(type,methodName);
 			}else if(ele.detachEvent){判断如果在ie浏览器下 是否为正性分支
 				ele.detachEvent("on"+type,methodName);
-
+	
 			}else{
 				ele['on'+methodName]=null;
-
+	
 			}
 			}	
 		};
@@ -597,7 +602,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                     //1.div消失
                     show.style.display="none"
                 }
-
+    
     </script>
 </body>
 
@@ -635,17 +640,17 @@ form表单必须使用get方法 才能search到 地址栏的属性值
             var rsBtn=document.querySelector(".rsub");
             var rinput=document.querySelector(".rinput");
             var radd=document.querySelector(".radd");
-
+    
             var gsub=document.querySelector(".gsub");
             var ginput=document.querySelector(".ginput");
             var gadd=document.querySelector(".gadd");
-
+    
             var bsub=document.querySelector(".bsub");
             var binput=document.querySelector(".binput");
             var badd=document.querySelector(".badd");
-
+    
             var go=document.querySelector(".go");
-
+    
         //定义信号量
             var r=200;
             var g=200;
@@ -684,7 +689,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                 //2.背景颜色改变
                 document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';*/
                 changeColor();
-
+    
             };
             radd.onclick=function () {
                 r++;
@@ -734,10 +739,10 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                 }
                 binput.value=b;
                 document.body.style.backgroundColor='rgb('+r+','+g+','+b+')';*/
-
+    
                 changeColor();
             };
-
+    
             go.onclick=function () {
                 //1.获取标签的值
                 r=rinput.value;
@@ -810,7 +815,6 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 
 **2022.3.26
 
-
 //获取验证码方法
         function getCheckCode(num){
             var str="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM123456789";
@@ -825,6 +829,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
           var result=getCheckCode(4);
           codeDiv.innerHTML=result;
           
+
         };
 
 
@@ -875,11 +880,11 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 
     var userNameInput=document.querySelector(".userNameInput");
     var userNameSpan=document.querySelector(".userNameSpan");
-
+    
     var checkCodeInput=document.querySelector(".checkCodeInput");
     var checkCodeSpan=document.querySelector(".checkCodeSpan");
     var codeDiv =document.querySelector(".codeDiv");
-
+    
     var btnInput=document.querySelector(".btn");
 
 
@@ -902,7 +907,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                 checkSuccess();
             }
         };
-
+    
     //获取验证码方法
         function getCheckCode(num){
             var str="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM123456789";
@@ -916,7 +921,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
         window.onload=function(){
           var result=getCheckCode(4);
           codeDiv.innerHTML=result;
-
+    
         };
         codeDiv.onclick=function(){
             var result=getCheckCode(4);
@@ -934,7 +939,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                 console.log("失去焦点");
                 if (phoneInput.value.length == 11) {
                     phoneInput.setAttribute("class", "greenBorder");
-
+    
                     //将phoneSpan的值设置为正确
                     phoneSpan.innerHTML = "正确";
                     //将phoneSpan的颜色设置为绿色
@@ -948,7 +953,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                     //将phoneSpan的颜色设置为红色
                     phoneSpan.setAttribute("class", "redColor");
                     checkSuccess();
-
+    
                 }
             };
         //2.用户名的焦点事件
@@ -969,12 +974,12 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                     //将phoneSpan的颜色设置为红色
                     userNameSpan.setAttribute("class", "redColor");
                     checkSuccess();
-
+    
                 }
          };
-
+    
      //判断是否可以提交
-
+    
      function checkSuccess() {
          if (userNameSpan.innerHTML=="正确"&& phoneSpan.innerHTML=="正确"&&checkCodeSpan.innerHTML=="正确"){
              btnInput.removeAttribute("disabled");
@@ -1041,7 +1046,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
             right: 0;
             top: 0;
         }.
-
+    
     </style>
 </head>
 <body>
@@ -1060,7 +1065,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
         《每日体育报》指出，巴西国家队正在发生的事情也证明了巴萨的立场是正确的。
 
         巴西主西主帅蒂特也更喜欢拉菲尼亚，这名利兹联的球员已经在巴西国家队的右翼占据了无可争议的首发位置。
-
+    
         来源：懂球帝 链接为 www.dongqiudi.com
         </p>
     </div>
@@ -1083,7 +1088,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
     ////三事件一开关
         //1.判断是否移动
         var flag=false;
-
+    
         var delY=0;
         //2.鼠标按下事件
         slidebar.onmousedown=function (event) {
@@ -1095,7 +1100,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
         //3.鼠标移动事件
         var tempTop=0;
         box.onmousemove=function (event) {
-
+    
             if (flag){
                 var event=event||window.event;
                  tempTop= event.clientY-delY;
@@ -1117,8 +1122,8 @@ form表单必须使用get方法 才能search到 地址栏的属性值
             box.onmouseup=function (event) {
                 flag=false;
             }
-
-	       //定义函数处理滚轮事件
+    
+           //定义函数处理滚轮事件
     function handlerMouseMiddle(event) {
         var event = event || window.event;
         //取消外部联动
@@ -1134,7 +1139,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
         } else {
             direction = event.detail < 0 ? 1 : -1;
         }
-
+    
         //向下滚动时
          tempTop += -direction * 20;
         if (tempTop < 0) {
@@ -1146,13 +1151,13 @@ form表单必须使用get方法 才能search到 地址栏的属性值
         slidebar.style.top = tempTop + "px";
         content.style.top = -tempTop / rate + "px";
     }
-
+    
     //ie or Google
     box.onmousewheel=handlerMouseMiddle;
     //火狐
     try{
         box.addEventListener("DOMMouseScroll",handlerMouseMiddle);
-
+    
     } catch (e) {
     console.log(e);
     }
@@ -1263,17 +1268,17 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 	3.生成webpack.config.js文件
 		1.配置出口入口
 			module.exports={
- 				 entry:__dirname+"/src/app.js",
-  				output:{
-      					path:__dirname+"/dist",
-     					 filename:"test.js"
- 					 }
+				 entry:__dirname+"/src/app.js",
+				output:{
+	  					path:__dirname+"/dist",
+	 					 filename:"test.js"
+					 }
 				};	
 	4.webpack执行的快捷方案
 		在package.json文件中代替webpack的执行
 		"scripts": {
-   		 "build": "webpack"
-  		},
+		 "build": "webpack"
+		},
 		命令：npm run build
 	5.调试:
 		生成错误信息文件
@@ -1330,10 +1335,10 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 			否则版本不兼容无法运行服务器
 		2.配置webpack
 			 {
-               				 test:/\.js$/,
-                				use:"babel-loader"
-        
-           			 }
+	           				 test:/\.js$/,
+	            				use:"babel-loader"
+	    
+	       			 }
 	-----2022.4.22
 		
 	9.构建react环境（webpack+es6+react）
@@ -1342,9 +1347,9 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 			npm install --save-dev babel-preset-react
 		2.编写配置文件
 			{
-               				 test:/\.(js|jsx)$/,
-                				use:"babel-loader"
-           			 }
+	           				 test:/\.(js|jsx)$/,
+	            				use:"babel-loader"
+	       			 }
 			增加.babelrc文件
 	10.css和图片处理
 		1.安装css相关依赖
@@ -1353,30 +1358,30 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 		2.添加配置
 			2.1css配置
 			{
-               				 test:/\.css$/,
-                					use:[
-                    				"style-loader",
-                    				"css-loader"
-                					]
-           			 }
+	           				 test:/\.css$/,
+	            					use:[
+	                				"style-loader",
+	                				"css-loader"
+	            					]
+	       			 }
 			2.2图片配置
 			{
-               				 test:/\.(png|jpg|gif|jpeg|svg)$/,
-                				use: "url-loader?limit=2048" //大于2M进行压缩
-           			 }
+	           				 test:/\.(png|jpg|gif|jpeg|svg)$/,
+	            				use: "url-loader?limit=2048" //大于2M进行压缩
+	       			 }
 	----2022.4.23
 	11.less和Sass
 		1.安装：
 			npm install --save-dev less less-loader
 		2.添加配置
 			 {
-               				 test:/\.less$/,
-                				use:[
-                    			"style-loader",
-                   			 "css-loader",
-                    			"less-loader"
-                				]
-           			 }
+	           				 test:/\.less$/,
+	            				use:[
+	                			"style-loader",
+	               			 "css-loader",
+	                			"less-loader"
+	            				]
+	       			 }
 	12.插件（plugins）
 		1.打开浏览器
 			1.安装：
@@ -1388,13 +1393,13 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 			2.配置
 		3.内置插件（省略后缀名）
 			resolve:{
-        				extensions:['.js','.jsx']
-    			},
+	    				extensions:['.js','.jsx']
+				},
 	14.生产环境的搭建
 		npm install -D cross-env
 		npm install -D babel-plugin-react-transform
 		npm install -D react-transform-hmr
-	
+
 --2022.4.24
 	React初始：
 		1.React是什么?
@@ -1406,6 +1411,7 @@ form表单必须使用get方法 才能search到 地址栏的属性值
             -遇到{}按照js语法解析
             -遇到<>按照xml语法解析
             
+
             warning:每一个列表元素需要指定一个key作为该元素的索引
             
             组件：
@@ -1420,12 +1426,12 @@ form表单必须使用get方法 才能search到 地址栏的属性值
                    6.组件内部状态改变：state（组件内状态改变）
                         1.this.state.属性名   
                         2.this.setState({})  
-		setState():引起视图的重建
+    	setState():引起视图的重建
                    7.组件加样式
                         类命名 className=""
                         行内样式 style={{}} 两个花括号 因为style 接收的是一个对象
                             如：<span style={{color:'green',fontSize:'35px'}}>lalalal</span>
-	       添加事件  同样是onclick={} 如 <button onMouseOver={this.hander}>按钮</button>
+           添加事件  同样是onclick={} 如 <button onMouseOver={this.hander}>按钮</button>
 
 -----2022.4.25
 	8.组件（component）的生命周期: 
@@ -1449,23 +1455,23 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 ----2022.4.27
 
 	为什么使用 bind(this) ?
-
-    当点击事件触发的函数里有使用 this 的时候，就需要使用 bind（this）,不然 this 是 null，如果没绑定this应该是全局window。
-
-    <div className="save" onClick={this.handleClick.bind(this)}>Save</div>
+	
+	当点击事件触发的函数里有使用 this 的时候，就需要使用 bind（this）,不然 this 是 null，如果没绑定this应该是全局window。
+	
+	<div className="save" onClick={this.handleClick.bind(this)}>Save</div>
 
 ----2022.4.28
 	//受控组件：受react控制的组件
 	//非受控组件操作原生dom
 
 	//定义网络请求
-      	var result=fetch("http://wthrcdn.etouch.cn/weather_mini")
-        	  .then(res => {
-           	 return res.json()
-          	})
-          	.then(data => {
-           	 console.log(data)
-          	})
+	  	var result=fetch("http://wthrcdn.etouch.cn/weather_mini")
+	    	  .then(res => {
+	       	 return res.json()
+	      	})
+	      	.then(data => {
+	       	 console.log(data)
+	      	})
 
 --2022.4.29
 	1.Mock (mock.js模拟数据)
@@ -1487,13 +1493,13 @@ form表单必须使用get方法 才能search到 地址栏的属性值
 
 
 	3.Router中文意思是路由，以前多见于后端，现如今前端也有自己的路由。
-
+	
 	为什么要使用路由？
-
+	
 	1：单页页面实现页面的切换
-
+	
 	2：可以通过URL对页面进行定位
-
+	
 	3：语义化组织资源
 
 
@@ -1516,90 +1522,117 @@ export default class App extends Component{
 }
 	
 
-**2022.5.19
-	Vue学习！
-
-	概念：Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。	
-
-	基本语法：
-		1.Mustache（双大括号）：可直接调用new Vue 对象里的data 参数
-		2.v-once：该指令后面不需要跟任何表达式（v-for后面接表达式）,该指令表示元素和组			件只渲染一次，不会随着数据的改变而改变。
-
-		3.v-html：v-html会将数据当html标签解析后输出。
-
-		4.v-text：<h2 v-text="message"></h2>等效于<h2>{{message}}</h2>，但相比			于Mustache，它不够灵活。
-
-		5.v-pre：如<h3 v-pre>{{message}}</h3>，标签显示结果就是它标签本身的内容，即			{{message}}。
-
-		6.v-cloak：解决屏幕闪动的好方法。
-
-		7.v-bind：基本属性绑定和动态绑定（对象或数组），将对应的图片或地址等数据放入			data中，使用v-bind将数据引用到对应的标签中，
-				v-bind:title 简写成  :title
-
-		v-bind语法糖（简写方式）：<img v-bind:src="imgUrl" />可写为						<img:src="imgUrl" />。
-
-		8.计算属性：其本质就是属性，包含setter和getter
-
-		9.v-on（缩写：@）：绑定事件监听器。一些处理事件的修饰符（可混合使用）：
-
-		（1）.stop阻止冒泡事件的发生
-
-		（2）.prevent阻止默认事件的发生，如不用.prevent,下面标签的submit指令会调用方法			后直接提交服务器 ，即控制台显示的数据会闪过
-
-		（3）.{keycode|keyAlias}特定键盘键触发回调
-
-		（4）.once只触发一次回调
-
-		10.v-show:判断属性。
-
-		与v-if区别：v-if在条件为false时，包含v-if指令的元素不会出现在dom中；v-show在条		件为false时，只是给元素添加一个行内样式：display:none，元素仍然在dom里面；
-
-		注意：当需要在显示与隐藏之间切换频率较高的时候，应该使用v-show（性能更高），当		次数较少时通常使用v-if。
-
-		11.v-for:循环遍历操作。语法：
-
-		（1）遍历数组：v-for="(m,index) in movies"  //m是新定义的变量名称，index是对		应数组的下标，movies是已有的数组名。Index可省略。
-
-		（2）遍历对象：<li v-for=”(value,key) in moive”>{{item}}</li>  //如果只获取一		个值，那么取得的值是value，key可以省略。
-
-		12.v-model：实现双向绑定（等同于v-on和v-bind一起使用，实现实时显示）。
-
-			
-***2022.5.22
-	1.事件修饰符：
-
-	<!-- 阻止单击事件继续传播 -->
-	<a v-on:click.stop="doThis"></a>
-
-	<!-- 提交事件不再重载页面 -->
-	<form v-on:submit.prevent="onSubmit"></form>
-
-	<!-- 修饰符可以串联 -->
-	<a v-on:click.stop.prevent="doThat"></a>
-
-	<!-- 只有修饰符 -->
-	<form v-on:submit.prevent></form>
-
-	<!-- 添加事件监听器时使用事件捕获模式 -->
-	<!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 -->
-	<div v-on:click.capture="doThis">...</div>
-
-	<!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
-	<!-- 即事件不是从内部元素触发的 -->
-	<div v-on:click.self="doThat">...</div>			
-		
+## **2022.5.19
 
 
-	  2.方法和侦听器的区别：
 
-            *方法：方法中任意数据发生了改变就会自动调用方法
-             可以调用，有返回值
+​	Vue学习！
 
-             *侦听器：需要指定具体的侦听数据，只有被具体的侦听数据发生了改变才会触发
-             不能像方法那样去调用，而是靠vue自动触发
-	
-	3.全局组件:在所有Vue实例中使用
-                		1.1命名：不要使用驼峰命名，可以使用中划线的方式命名
-                		1.2模板：必须的
-                		1.3数据：一定要函数方式声明
-		
+- [x] 	概念：Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。	
+  	
+  	基本语法：
+  		1.Mustache（双大括号）：可直接调用new Vue 对象里的data 参数
+  		2.v-once：该指令后面不需要跟任何表达式（v-for后面接表达式）,该指令表示元素和组			件只渲染一次，不会随着数据的改变而改变。
+  	
+  		3.v-html：v-html会将数据当html标签解析后输出。
+  	
+  		4.v-text：<h2 v-text="message"></h2>等效于<h2>{{message}}</h2>，但相比			于Mustache，它不够灵活。
+  	
+  		5.v-pre：如<h3 v-pre>{{message}}</h3>，标签显示结果就是它标签本身的内容，即			{{message}}。
+  	
+  		6.v-cloak：解决屏幕闪动的好方法。
+  	
+  		7.v-bind：基本属性绑定和动态绑定（对象或数组），将对应的图片或地址等数据放入			data中，使用v-bind将数据引用到对应的标签中，
+  				v-bind:title 简写成  :title
+  	
+  		v-bind语法糖（简写方式）：<img v-bind:src="imgUrl" />可写为						<img:src="imgUrl" />。
+  	
+  		8.计算属性：其本质就是属性，包含setter和getter
+  	
+  		9.v-on（缩写：@）：绑定事件监听器。一些处理事件的修饰符（可混合使用）：
+  	
+  		（1）.stop阻止冒泡事件的发生
+  	
+  		（2）.prevent阻止默认事件的发生，如不用.prevent,下面标签的submit指令会调用方法			后直接提交服务器 ，即控制台显示的数据会闪过
+  	
+  		（3）.{keycode|keyAlias}特定键盘键触发回调
+  	
+  		（4）.once只触发一次回调
+  	
+  		10.v-show:判断属性。
+  	
+  		与v-if区别：v-if在条件为false时，包含v-if指令的元素不会出现在dom中；v-show在条		件为false时，只是给元素添加一个行内样式：display:none，元素仍然在dom里面；
+  	
+  		注意：当需要在显示与隐藏之间切换频率较高的时候，应该使用v-show（性能更高），当		次数较少时通常使用v-if。
+  	
+  		11.v-for:循环遍历操作。语法：
+  	
+  		（1）遍历数组：v-for="(m,index) in movies"  //m是新定义的变量名称，index是对		应数组的下标，movies是已有的数组名。Index可省略。
+  	
+  		（2）遍历对象：<li v-for=”(value,key) in moive”>{{item}}</li>  //如果只获取一		个值，那么取得的值是value，key可以省略。
+  	
+  		12.v-model：实现双向绑定（等同于v-on和v-bind一起使用，实现实时显示）。
+
+
+​			
+
+## ***2022.5.22
+
+​	1.事件修饰符
+
+1. 	<!-- 阻止单击事件继续传播 -->
+      	<a v-on:click.stop="doThis"></a>
+      	
+      	<!-- 提交事件不再重载页面 -->
+      	<form v-on:submit.prevent="onSubmit"></form>
+      	
+      	<!-- 修饰符可以串联 -->
+      	<a v-on:click.stop.prevent="doThat"></a>
+      	
+      	<!-- 只有修饰符 -->
+      	<form v-on:submit.prevent></form>
+      	
+      	<!-- 添加事件监听器时使用事件捕获模式 -->
+      	<!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 -->
+      	<div v-on:click.capture="doThis">...</div>
+      	
+      	<!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+      	<!-- 即事件不是从内部元素触发的 -->
+      	<div v-on:click.self="doThat">...</div>			
+
+
+------
+
+
+
+> 1. 	  2.方法和侦听器的区别：
+>    	
+>       	        *方法：方法中任意数据发生了改变就会自动调用方法
+>       	         可以调用，有返回值
+>    	      	
+>       	         *侦听器：需要指定具体的侦听数据，只有被具体的侦听数据发生了改变才会触发
+>       	         不能像方法那样去调用，而是靠vue自动触发
+>    	      	
+>       	3.全局组件:在所有Vue实例中使用
+>       	            		1.1命名：不要使用驼峰命名，可以使用中划线的方式命名
+>       	            		1.2模板：必须的
+>       	            		1.3数据：一定要函数方式声明
+>
+
+## **2022.5.24
+
+##### Vue生命周期：每一个vue实例从创建到销毁的过程，就是这个vue实例的[生命周期](https://so.csdn.net/so/search?q=生命周期&spm=1001.2101.3001.7020)。在这个过程中，他经历了从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程。那么这些过程中，具体vue做了些啥，我们今天来了解一下。
+
+![](C:\Users\wwwch\Pictures\Camera Roll\20201224171705552.png)
+
+#### 使用Vue脚手架进行模块化开发
+
+1.npm install -g @vue/cli   安装脚手架全局配置
+
+2.vue create 项目名   
+
+3.启动项目 npm run serve
+
+###### 附：部分文件功能介绍（网上找的图片）
+
+![](C:\Users\wwwch\Pictures\Camera Roll\文件功能.jpg)
